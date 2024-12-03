@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebRTC Audio Chat Room</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen p-8">
+    <div class="max-w-md mx-auto bg-white rounded-lg shadow-lg p-6">
+        <div id="joinForm" class="space-y-4">
+            <h2 class="text-2xl font-bold text-gray-800">Join Audio Chat Room</h2>
+            <input type="text" id="roomId" placeholder="Enter Room ID" 
+                   class="w-full p-2 border rounded">
+            <button id="joinBtn" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">
+                Join Room
+            </button>
+        </div>
+        
+        <div id="roomUI" class="hidden space-y-4">
+            <div class="flex justify-between items-center">
+                <h3 class="text-xl font-semibold text-gray-800">Room: <span id="roomDisplay"></span></h3>
+                <span id="timer" class="text-gray-600"></span>
+            </div>
+            
+            <div id="participants" class="space-y-2">
+                <div class="text-sm text-gray-600">Connected Users: <span id="userCount">0</span></div>
+                <div id="userList" class="space-y-1"></div>
+            </div>
+            
+            <div class="flex space-x-2">
+                <button id="leaveBtn" class="bg-red-500 text-white p-2 rounded hover:bg-red-600 flex-1">
+                    Leave Room
+                </button>
+                <button id="muteBtn" class="bg-gray-500 text-white p-2 rounded hover:bg-gray-600">
+                    🎤
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="webrtc.js"></script>
+</body>
+</html>
